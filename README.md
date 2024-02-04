@@ -13,10 +13,9 @@ This project is a single-page application (SPA) developed as part of the task as
 
 ## Default Admin Info
 
-- **Username:** `<admin_username>`
-- **Password:** `<admin_password>`
+- **Username:** `admin`
+- **Password:** `pass_code`
 
-*Note: Replace `<admin_username>` and `<admin_password>` with the actual credentials.*
 
 ## Setup and Running the Project
 
@@ -24,11 +23,11 @@ To run the project, ensure you have [Node.js](https://nodejs.org/) installed. Th
 
 1. Clone the repository:
     ```bash
-    git clone <repository_url>
+    git clone git@github.com:xlassix/wakanow-assessment.git
     ```
 2. Navigate to the project directory:
     ```bash
-    cd <project_directory>
+    cd wakanow-assessment
     ```
 3. Install dependencies:
     ```bash
@@ -48,6 +47,7 @@ To run the project, ensure you have [Node.js](https://nodejs.org/) installed. Th
 - Implemented the required signup and admin approval functionalities.
 - Integrated with JSON Server for REST API calls.
 - Enabled CRUD operations for approved users.
+- Integrated Material UI
 
 
 ## Running the Assessment
@@ -64,3 +64,4 @@ To run the project, ensure you have [Node.js](https://nodejs.org/) installed. Th
 
 - **Testing:** Implement unit and integration tests using Jasmine and Karma for Angular applications.
 - **UI/UX Improvements:** Enhance the user interface with modern design principles for a more engaging user experience.
+- **Deployment**: Deploy a proper rest API that handles the authentication and more login
