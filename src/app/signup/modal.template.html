@@ -1,0 +1,13 @@
+<div class="padded">
+    <h2 mat-dialog-title>UserName: {{data.username}}</h2>
+    <h2 mat-dialog-title>Pass code: {{data.pass_code}}</h2>
+
+    <p>NB: keep this credentials safe, you will need them to login</p>
+    <mat-dialog-actions class="modal-buttons">
+        <button mat-button class="no-thanks" color="primary" (click)="onNoClick()">No Thanks</button>
+        <button mat-raised-button class="proceed" (click)="data.toLogin()" [mat-dialog-close]="data.pass_code"
+            cdkFocusInitial>Proceed To
+            login</button>
+    </mat-dialog-actions>
+
+</div>

@@ -1,0 +1,10 @@
+.login {
+    padding: 2rem;
+    font-size: 2rem;
+    outline: none;
+    border: none;
+    background-color: #efebf7;
+}
+.profileButton{
+    margin: 1rem;
+}

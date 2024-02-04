@@ -1,0 +1,25 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title class="title"> Users waiting Approval</mat-card-title>
+    </mat-card-header>
+    <mat-list>
+        @for (user of users; track user.id) {
+        <mat-list-item (click)="selectUser(user)">
+            <div class="user">
+                <h3 matLine>{{ user.id | titlecase }}</h3>
+                <p matLine>
+                    {{ user.firstName| titlecase }}
+                    {{ user.lastName| titlecase }}
+                </p>
+            </div>
+        </mat-list-item>
+        }
+        @empty {
+        <div class="empty">
+            <p>
+                Empty list of users
+            </p>
+        </div>
+        }
+    </mat-list>
+</mat-card>

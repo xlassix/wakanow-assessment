@@ -1,0 +1,57 @@
+<div class="login-container">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title> Login </mat-card-title>
+        </mat-card-header>
+        <form #f="ngForm" name="form" (ngSubmit)="f.form.valid && onSubmit($event)">
+            <mat-card-content>
+                <mat-form-field class="full-width">
+                    <input matInput placeholder="username" #username="ngModel" (ngModelChange)="clearError()"
+                        [(ngModel)]="form.username" type="text" name="username" minlength="5" required />
+                    @if (f.submitted && username.errors ){
+                    <mat-hint class="invalid-feedback">
+                        @if (username.errors['required']) {
+                        <mat-hint>Username is required</mat-hint>
+                        }
+                        @if (username.errors['minlength']) {
+                        <mat-hint>Username must be at least 6 characters</mat-hint>
+                        }
+                        @if (username.errors['maxlength']) {
+                        <mat-hint>Username must be at most 20 characters</mat-hint>
+                        }
+                    </mat-hint>
+                    }
+                </mat-form-field>
+                <mat-form-field class="full-width">
+                    <input matInput placeholder="passcode" #password="ngModel" [(ngModel)]="form.password"
+                        (ngModelChange)="clearError()" type="password" required name="password" id="password" matInput
+                        [type]="hide ? 'password' : 'text'" />
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                        [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                    @if (f.submitted && password.errors ||error ){
+                    <mat-hint class="invalid-feedback">
+                        @if (error) {
+                        <mat-hint>{{error}}</mat-hint>
+                        }@else {
+                        <mat-hint>passcode is required</mat-hint>
+                        }
+                    </mat-hint>
+                    }
+
+                </mat-form-field>
+            </mat-card-content>
+
+            <mat-card-actions>
+                <button class="login-button" type="submit" mat-stroked-button color="primary">Login</button>
+            </mat-card-actions>
+            <div class="footer-text">
+                <span>
+                    I dont have an account?
+                    <button mat-button color="primary" (click)="navigateToSignUp()">Sign Up</button>
+                </span>
+            </div>
+        </form>
+    </mat-card>
+</div>

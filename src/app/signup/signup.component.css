@@ -1,0 +1,52 @@
+.login-button {
+    width: 100%;
+    margin: 0 0.25rem 1rem 0.25rem;
+}
+
+.login-button:disabled {
+    cursor: not-allowed;
+}
+
+.padded{
+    padding: 1rem 0.25rem;
+}
+.invalid-feedback>* {
+    color: red
+}
+
+.error {
+    text-align: center;
+    color: red
+}
+
+.footer-text {
+    margin: 0 0.25rem 1rem 0.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-buttons {
+    justify-content: space-between;
+}
+
+.no-thanks {
+    padding: 0.5rem 1rem;
+    outline: none;
+    font-size: 0.9rem;
+    color: plum;
+    border-radius: 0.25rem;
+    background: transparent;
+    border: none
+}
+
+.proceed {
+    padding: 0.5rem 1rem;
+    outline: none;
+    font-size: 0.9rem;
+    border-radius: 0.25rem;
+    box-shadow: none;
+    background: purple;
+    color: white;
+    border: none
+}

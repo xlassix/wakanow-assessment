@@ -1,0 +1,60 @@
+<div class="login-container">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title> Login </mat-card-title>
+        </mat-card-header>
+        <form #f="ngForm" name="form" (ngSubmit)="f.form.valid && onSubmit(f)">
+            <mat-card-content>
+                <mat-form-field class="full-width">
+                    <input matInput placeholder="username" #id="ngModel" (ngModelChange)="clearError()"
+                        [(ngModel)]="form.id" type="text" name="id" required minlength="5" />
+                    @if (f.submitted && id.errors ){
+                    <mat-hint class="invalid-feedback">
+                        @if (id.errors['required']) {
+                        <mat-hint>Username is required</mat-hint>
+                        }
+                        @if (id.errors['minlength']) {
+                        <mat-hint>Username must be at least 5 characters</mat-hint>
+                        }
+                        @if (id.errors['maxlength']) {
+                        <mat-hint>Username must be at most 20 characters</mat-hint>
+                        }
+                    </mat-hint>
+                    }
+                </mat-form-field>
+                <mat-form-field class="full-width">
+                    <input matInput placeholder="firstName" #firstName="ngModel" [(ngModel)]="form.firstName"
+                        (ngModelChange)="clearError()" required name="firstName" id="firstName" matInput />
+                    @if (f.submitted && firstName.errors){
+                    <mat-hint class="invalid-feedback">
+                        <mat-hint>firstName is required</mat-hint>
+                    </mat-hint>
+                    }
+                </mat-form-field>
+                <mat-form-field class="full-width">
+                    <input matInput placeholder="lastName" #lastName="ngModel" [(ngModel)]="form.lastName"
+                        (ngModelChange)="clearError()" required name="lastName" id="lastName" matInput />
+                    @if (f.submitted && lastName.errors ||error ){
+                    <mat-hint class="invalid-feedback">
+                        @if (error) {
+                        <mat-hint>{{error}}</mat-hint>
+                        }@else {
+                        <mat-hint>lastName is required</mat-hint>
+                        }
+                    </mat-hint>
+                    }
+                </mat-form-field>
+            </mat-card-content>
+
+            <mat-card-actions>
+                <button class="login-button" type="submit" mat-stroked-button color="primary">SignUp</button>
+            </mat-card-actions>
+            <div class="footer-text">
+                <span>
+                    I have an account?
+                    <button mat-button color="primary" (click)="navigateToLogin()">Login</button>
+                </span>
+            </div>
+        </form>
+    </mat-card>
+</div>

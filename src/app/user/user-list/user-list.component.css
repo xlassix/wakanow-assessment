@@ -1,0 +1,12 @@
+.user{
+    min-height: 4.5rem;
+    display: flex;
+    align-items: center;
+}
+.empty{
+    text-align: center;
+    min-height:10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

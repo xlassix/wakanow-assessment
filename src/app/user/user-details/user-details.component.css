@@ -1,0 +1,14 @@
+.main-card {
+    padding: 1rem;
+}
+
+.empty {
+    width: 100%;
+    min-height: 15rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    outline: none;
+    min-width: 40vw;
+}

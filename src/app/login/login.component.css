@@ -1,0 +1,26 @@
+.login-button {
+    width: 100%;
+
+}
+
+.login-button:disabled {
+    cursor: not-allowed;
+}
+
+.invalid-feedback>* {
+    color: red
+}
+
+.error {
+    text-align: center;
+    color: red
+}
+
+
+
+.footer-text {
+    margin: 0 0.25rem 1rem 0.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
