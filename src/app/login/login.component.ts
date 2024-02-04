@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { UserInfo } from '../shared/interfaces/auth.interface';
 import { AuthService } from '../shared/services/auth/auth.service';
 import { NgForm } from '@angular/forms';
@@ -14,8 +14,8 @@ const emptyUserInfo = {
   styleUrls: ['./login.component.css'],
 })
 
-export class LoginComponent {
-  form: UserInfo = emptyUserInfo
+export class LoginComponent implements OnChanges {
+  form: UserInfo = { ...emptyUserInfo }
   error = ""
   hide = true;
 
@@ -23,6 +23,14 @@ export class LoginComponent {
 
   clearError() {
     this.error = ""
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    this.authService.isAuthenticated$.subscribe(e => {
+      if (e) {
+        this.router.navigate(["/home"])
+      }
+    })
   }
 
   navigateToSignUp() {
@@ -33,7 +41,10 @@ export class LoginComponent {
   onSubmit(form: NgForm): void {
     try {
       this.authService.login(this.form)
-        .subscribe(e => this.authService.validateUser(e, this.form.password), error => { this.error = error });
+        .subscribe(e => {
+          this.authService.validateUser(e, this.form.password)
+          form.reset()
+        }, error => { this.error = error });
     } catch (e: any) {
       this.error = e
     }
