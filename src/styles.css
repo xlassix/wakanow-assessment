@@ -1,1 +1,316 @@
-/* You can add global styles to this file, and also import other style files */
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, sans-serif;
+    height: 100%;
+    display: flex;
+}
+
+p {
+    margin: 16px;
+}
+
+.icon-20 {
+    font-size: 20px;
+}
+
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    margin: 10px;
+    flex-wrap: wrap;
+}
+
+.container .mat-card-header-text {
+    margin-left: 0;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ffd740;
+}
+
+.container .mat-toolbar {
+    margin-bottom: 10px;
+}
+
+.container .mat-card.shape {
+    width: 200px;
+}
+
+.container [class*="col"] {
+    padding: 10px;
+    flex: 1;
+}
+
+.header {
+    padding-bottom: 10px;
+    color: #673ab7;
+    border-bottom: 2px solid #673ab7;
+}
+
+app-root {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+mat-toolbar {
+    box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
+    z-index: 1;
+}
+
+mat-sidenav {
+    box-shadow: 3px 0 6px rgba(0, 0, 0, 0.24);
+    width: 200px;
+    padding-top: 10px;
+}
+
+mat-card:not(.dashboard-card) {
+    margin-bottom: 20px;
+}
+
+.mat-sidenav-container {
+    background: #f5f5f5;
+    flex: 1;
+}
+
+.mat-sidenav-container .mat-divider {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.mat-sidenav-container .mat-subheader {
+    margin: 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.fill-remaining-space {
+    flex: 1 1 auto;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.container-component {
+    display: flex;
+    justify-content: space-around;
+}
+
+.container-component .list,
+.container-component .details {
+    width: 49%;
+}
+
+.users-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.users-container .users-list,
+.users-container .user-details {
+    flex-basis: 49%;
+    width: 100%;
+}
+
+app-user-details mat-card {
+    min-width: 40vw;
+    max-width: 45vw;
+}
+
+@media (max-width: 768px) {
+
+    .users-container .users-list,
+    .users-container .users-details {
+        flex-basis: 100%;
+        width: 100%;
+    }
+
+    .users-container {
+        display: block;
+        flex-basis: 100%;
+    }
+
+    app-user-details mat-card {
+        min-width: unset;
+        max-width: unset;
+    }
+}
+
+.login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 64px);
+}
+
+.login-container mat-card {
+    max-width: 20rem;
+}
+
+
+.dashboard-card {
+    position: absolute !important;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+}
+
+.dashboard-card mat-card-header {
+    justify-content: center;
+}
+
+mat-card-title {
+    font-size: 1rem;
+}
+
+.dashboard-card-content {
+    text-align: center;
+}
+
+.more-button {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
+
+.grid-container,
+.list-container {
+    margin: 20px;
+}
+
+.list-container .full-width-table {
+    width: 100%;
+}
+
+.list-container tr {
+    -webkit-transition: background-color 300ms;
+    -moz-transition: background-color 300ms;
+    -ms-transition: background-color 300ms;
+    -o-transition: background-color 300ms;
+    transition: background-color 300ms;
+}
+
+.list-container tr:not(.mat-header-row):hover {
+    background: whitesmoke;
+    cursor: pointer;
+}
+
+.details-container mat-form-field,
+.login-container mat-form-field,
+mat-form-field {
+    width: 100%;
+}
+
+.details-container mat-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+mat-list-item:not(:first-of-type) {
+    border-top: 1px solid #efefef;
+}
+
+mat-list-item:hover {
+    cursor: pointer;
+    background: whitesmoke;
+}
+
+.symbol {
+    color: #777;
+}
+
+mat-card-actions {
+    margin-bottom: 0;
+}
+
+.nav-link {
+    color: rgba(0, 0, 0, 0.54);
+    display: flex !important;
+    align-items: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+/* UI LOGIN */
+.login {
+    height: 100%;
+}
+
+.login .background {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    display: block;
+    /* Background image CSS commented out as it cannot be included directly in CSS */
+    height: 100%;
+    overflow: hidden;
+}
+
+.login .container {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 100;
+}
+
+.login .container .card-wrapper {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.login mat-card {
+    box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
+}
+
+.login mat-card mat-card-header {
+    margin-bottom: 10px;
+}
+
+/* Instagram filters styles for .ig-* classes omitted as they are not directly relevant to structure */
+
+/* UI TOOLBAR */
+mat-toolbar {
+    box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
+    z-index: 900;
+}
+
+mat-toolbar>.mat-mini-fab {
+    margin-right: 10px;
+}
+
+mat-toolbar .spacer {
+    flex: 1 1 auto;
+}
+
+mat-toolbar .title {
+    vertical-align: middle;
+}
+
+mat-toolbar .logo img {
+    vertical-align: middle;
+    width: 100px;
+    height: auto;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
