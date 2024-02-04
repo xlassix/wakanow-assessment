@@ -11,6 +11,9 @@ export class UserListComponent {
   @Input({
     required: true
   }) users: User[] | null;
+  @Input({
+    required: true
+  }) title: string;
   @Output() userSelected = new EventEmitter<User>();
   constructor() { }
   selectUser(user: User) {

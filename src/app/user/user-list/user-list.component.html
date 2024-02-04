@@ -1,6 +1,6 @@
 <mat-card>
     <mat-card-header>
-        <mat-card-title class="title"> Users waiting Approval</mat-card-title>
+        <mat-card-title class="title">{{title | titlecase }} </mat-card-title>
     </mat-card-header>
     <mat-list>
         @for (user of users; track user.id) {
@@ -8,8 +8,10 @@
             <div class="user">
                 <h3 matLine>{{ user.id | titlecase }}</h3>
                 <p matLine>
+                    (
                     {{ user.firstName| titlecase }}
                     {{ user.lastName| titlecase }}
+                    )
                 </p>
             </div>
         </mat-list-item>

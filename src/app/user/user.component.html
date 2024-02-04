@@ -1,7 +1,7 @@
 <div class="users-container">
     <div class="users-list">
-        <app-user-list [users]="users$ | async" (userSelected)="selectUser($event)"></app-user-list>
-        <app-user-list [users]="usersUnderManagement$ | async" (userSelected)="selectUser($event)"></app-user-list>
+        <app-user-list title="Users Pending Approval" [users]="users$ | async" (userSelected)="selectUser($event)"></app-user-list>
+        <app-user-list title="Users Under Management" [users]="usersUnderManagement$ | async" (userSelected)="selectUser($event)"></app-user-list>
     </div>
     <div class="users-details">
         <app-user-details [selectedUser]="selectedUser" (userUpdated)="updateUser($event)">
