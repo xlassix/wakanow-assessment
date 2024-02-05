@@ -43,7 +43,7 @@ export class LoginComponent implements OnChanges {
       this.authService.login(this.form)
         .subscribe(e => {
           this.authService.validateUser(e, this.form.password)
-          form.reset()
+          form.resetForm()
         }, error => { this.error = error });
     } catch (e: any) {
       this.error = e
